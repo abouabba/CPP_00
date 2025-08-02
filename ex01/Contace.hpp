@@ -1,5 +1,5 @@
-# ifndef CONTACTS
-# define CONTACTS
+# ifndef CONTACTS_HPP
+# define CONTACTS_HPP
 
 # include <iostream>
 

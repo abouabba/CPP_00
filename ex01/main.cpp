@@ -1,4 +1,5 @@
-# include "PhoneBook.hpp"
+# include "phonebook.hpp"
+
 using std::string;
 using std::cout;
 using std::cin;
@@ -15,18 +16,19 @@ int main() {
 
 		cout << "enter a command(ADD, SEARCH, EXIT): ";
 		getline(cin, name);
-		cout << name << endl;
 		if (name =="ADD")
 		{
-			PhoneBook.
+			PhoneBook.addcontact();
 		}
 		else if (name == "SEARCH")
 		{
-			//...
+			PhoneBook.searchcontact();
 		}
 		else if (name == "EXIT")
 		{
-			//...
+			break;
+			cout << "Goodbye!" << endl;
+			exit(0);
 		}
 		else
 			cout << "PLEASE INTER(ADD, SEARCH, EXIT)";

@@ -1,12 +1,15 @@
-# ifndef PHONEBOOK
-# define PHONEBOOK
+# ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 # include <iostream>
 
 class Pbook {
 
 	public:
-		void exitbook();
+		void addcontact();
+		void searchcontact();
 };
+
+
 
 # endif
