@@ -1,5 +1,5 @@
 # include "phonebook.hpp"
-# include "contact.hpp"
+# include "Contact.hpp"
 
 
 void Pbook::addcontact() {
@@ -12,7 +12,7 @@ void Pbook::addcontact() {
     std::cout << "enter nick name: ";
     std::getline(std::cin, newContact.nick_name);
     std::cout << "enter phone number: ";
-    std::getline(std::cin, newContact.phoneNumber);
+    std::getline(std::cin, newContact.phone_number);
 	std::cout << "enter darkest_secret: ";
     std::getline(std::cin, newContact.darkest_secret);
 }
