@@ -1,17 +1,17 @@
 # ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-using namespace std;
+# include <string>
 
 class Contact {
 
 	public:
-		string	contacts;
-		string	first_name;
-		string	last_name;
-		string	nick_name;
-		string	phone_number;
-		string	darkest_secret;
+		std::string	contacts;
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nick_name;
+		std::string	phone_number;
+		std::string	darkest_secret;
 };
 
 # endif

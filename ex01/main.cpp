@@ -6,6 +6,10 @@ using std::cin;
 using std::endl;
 // using namespace std;
 
+Pbook::Pbook() {
+	contactCount = 0;
+}
+
 int main() {
 
 	string	name;
