@@ -10,6 +10,4 @@ class Pbook {
 		void searchcontact();
 };
 
-
-
 # endif

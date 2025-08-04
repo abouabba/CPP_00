@@ -1,4 +1,4 @@
-# include "phonebook.hpp"
+# include "PhoneBook.hpp"
 
 using std::string;
 using std::cout;
@@ -15,7 +15,11 @@ int main() {
 	while (true) {
 
 		cout << "enter a command(ADD, SEARCH, EXIT): ";
-		getline(cin, name);
+		if (!getline(cin, name))
+		{
+			std::cerr << "Error reading input." << endl;
+			exit(1);
+		}
 		if (name =="ADD")
 		{
 			PhoneBook.addcontact();
