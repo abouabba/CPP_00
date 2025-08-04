@@ -20,7 +20,7 @@ void Pbook::searchcontact() {
               << std::setw(10) << "DARKEST SECRET" << "|" << std::endl;
 
 	for (int i = 0; contactCount > i; i++) {
-		Contact contact = contacts[i];
+		Contact& contact = contacts[i];
     	std::cout	<< std::setw(10) << contactCount - 1 << "|" 
 					<< std::setw(10) << contact.first_name << "|"
     				<< std::setw(10) << contact.last_name << "|"
