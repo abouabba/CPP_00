@@ -1,10 +1,10 @@
 # include "PhoneBook.hpp"
 
-using std::string;
-using std::cout;
-using std::cin;
-using std::endl;
-// using namespace std;
+// using std::string;
+// using std::cout;
+// using std::cin;
+// using std::endl;
+using namespace std;
 
 Pbook::Pbook() {
 	contactCount = 0;
