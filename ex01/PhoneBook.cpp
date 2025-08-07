@@ -21,7 +21,7 @@ void Pbook::searchcontact() {
 
 	for (int i = 0; contactCount > i; i++) {
 		Contact& contact = contacts[i];
-    	std::cout	<< std::setw(10) << contactCount - 1 << "|" 
+    	std::cout	<< std::setw(10) << i << "|" 
 					<< std::setw(10) << contact.first_name << "|"
     				<< std::setw(10) << contact.last_name << "|"
     				<< std::setw(10) << contact.nick_name << "|"
