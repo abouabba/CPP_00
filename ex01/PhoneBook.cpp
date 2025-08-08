@@ -5,6 +5,11 @@
 
 
 
+std::string formatField(std::string str) {
+    if (str.length() > 10)
+        return str.substr(0, 9) + ".";
+    return std::string(10 - str.length(), ' ') + str;
+}
 
 void Pbook::searchcontact() {
     if (contactCount == 0) {
@@ -12,21 +17,20 @@ void Pbook::searchcontact() {
         return ;
     }
 
-    std::cout << std::setw(10) << "INDEX" << "|"
-              << std::setw(10) << "FIRST NAME" << "|"
-              << std::setw(10) << "LAST NAME" << "|"
-              << std::setw(10) << "NICK NAME" << "|"
-              << std::setw(10) << "PHONE NUMBER" << "|"
-              << std::setw(10) << "DARKEST SECRET" << "|" << std::endl;
+    std::cout << formatField("INDEX") << "|"
+             << formatField("FIRST NAME") << "|"
+             << formatField("LAST NAME") << "|"
+             << formatField("NICK NAME") << "|"
+             << formatField("PHONE NUMBER") << "|"
+             << formatField("DARKEST SECRET") << "|" << std::endl;
 
 	for (int i = 0; contactCount > i; i++) {
 		Contact& contact = contacts[i];
     	std::cout	<< std::setw(10) << i << "|" 
-					<< std::setw(10) << contact.first_name << "|"
-    				<< std::setw(10) << contact.last_name << "|"
-    				<< std::setw(10) << contact.nick_name << "|"
-    				<< std::setw(10) << contact.phone_number << "|"
-					<< std::setw(10) << contact.darkest_secret << "|" << std::endl;
+					<< std::setw(10) << formatField(contact.first_name) << "|"
+    				<< std::setw(10) << formatField(contact.last_name) << "|"
+    				<< std::setw(10) << formatField(contact.nick_name) << "|"
+    				<< std::setw(10) << formatField(contact.phone_number) << "|"
+					<< std::setw(10) << formatField(contact.darkest_secret) << "|" << std::endl;
 					}
 }
-
