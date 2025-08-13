@@ -3,10 +3,7 @@
 
 void Pbook::addcontact() {
 
-	if (contactCount >= 8)
-		contactCount = 0;
-
-	Contact& newContact = contacts[contactCount];
+	Contact& newContact = contacts[contactCount % 8];
 	std::cout << "Enter first name: ";
 	std::getline(std::cin, newContact.first_name);
 	std::cout << "Enter last name: ";
@@ -17,5 +14,6 @@ void Pbook::addcontact() {
 	std::getline(std::cin, newContact.phone_number);
 	std::cout << "Enter darkest_secret: ";
 	std::getline(std::cin, newContact.darkest_secret);
-	contactCount++;
+	if (contactCount < 8)
+		contactCount++;
 }
