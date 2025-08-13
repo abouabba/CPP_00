@@ -9,9 +9,8 @@ class Pbook {
 
 	private:
 		Contact contacts[8];
-		int contactCount;
+		int contactCount = 0;
 	public:
-		Pbook();
 		void addcontact();
 		void searchcontact();
 };

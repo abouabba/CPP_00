@@ -2,3 +2,20 @@ CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = phonebook
 SRCS = main.cpp Contact.cpp PhoneBook.cpp
+
+OBGS = ${SRCS:.cpp=.o}
+
+all: ${NAME}
+
+${NAME}: ${OBGS}
+	${CC} ${CFLAGS} -o ${NAME} ${OBGS}
+
+clean:
+	rm -rf ${OBGS}
+
+fclean: clean
+	rm -rf ${NAME}
+
+re: fclean all
+
+.PHONY: clean
