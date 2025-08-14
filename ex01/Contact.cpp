@@ -1,6 +1,10 @@
 # include "Contact.hpp"
 # include "PhoneBook.hpp"
 
+Pbook::Pbook() {
+    contactCount = 0;
+}
+
 void Pbook::addcontact() {
 
 	Contact& newContact = contacts[contactCount % 8];
