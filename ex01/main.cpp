@@ -28,11 +28,8 @@ int main() {
 		}
 		else if (name == "EXIT")
 		{
-			break;
 			cout << "Goodbye!" << endl;
 			exit(0);
 		}
-		else
-			cout << "PLEASE INTER(ADD, SEARCH, EXIT)";
 	}
 }
