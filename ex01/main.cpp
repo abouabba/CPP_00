@@ -10,14 +10,14 @@ int main() {
 	Pbook	PhoneBook;
 
 	cout << "Welcome to the 80s and their unbelievable technology!" << endl;
-	while (true) {
+	cout << "enter a command(ADD, SEARCH, EXIT): " << std::endl;
+	while (getline(cin, name)) {
 
-		cout << "enter a command(ADD, SEARCH, EXIT): ";
-		if (!getline(cin, name))
-		{
-			std::cerr << "Error reading input." << endl;
-			exit(1);
-		}
+		// if ()
+		// {
+		// 	cerr << "Error reading input." << endl;
+		// 	exit(1);
+		// }
 		if (name =="ADD")
 		{
 			PhoneBook.addcontact();
@@ -31,5 +31,7 @@ int main() {
 			cout << "Goodbye!" << endl;
 			exit(0);
 		}
+		cout << "enter a command(ADD, SEARCH, EXIT): " << std::endl;
 	}
+	std::cout << std::endl;
 }

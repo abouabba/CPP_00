@@ -13,5 +13,6 @@ int main (int ac, char **av) {
 				std::cout << static_cast<char>(toupper(av[i][j]));
 				}
 			}
+		std::cout << std::endl;
 	}
 }
