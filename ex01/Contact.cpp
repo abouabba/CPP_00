@@ -8,34 +8,58 @@ Pbook::Pbook() {
 void Pbook::addcontact() {
 
 	Contact& newContact = contacts[contactCount % 8];
-	std::cout << "Enter first name: ";
-	std::getline(std::cin, newContact.first_name);
-	std::cout << "Enter last name: ";
-	std::getline(std::cin, newContact.last_name);
-	std::cout << "Enter nick name: ";
-	std::getline(std::cin, newContact.nick_name);
-	std::cout << "Enter phone number: ";
-	while(1)
-	{
+	while(1) {
+
+		std::cout << "Enter first name: ";
+		if (!std::getline(std::cin, newContact.first_name))
+			return;
+		if(newContact.first_name.empty())
+		{
+			std::cout << std::endl;
+			continue;
+		}
+		std::cout << "Enter last name: ";
+		if (!std::getline(std::cin, newContact.last_name))
+			return;
+		if (newContact.last_name.empty())
+		{
+				std::cout << std::endl;
+				continue;
+		}
+		std::cout << "Enter nick name: ";
+		if (!std::getline(std::cin, newContact.nick_name))
+			return;
+		if (newContact.nick_name.empty())
+		{
+			std::cout << std::endl;
+			continue;
+		}
+		std::cout << "Enter phone number: ";
 		if(!std::getline(std::cin, newContact.phone_number))
 			return;
 		if(newContact.phone_number.empty())
 		{
-			std::cout << "phone number cant be empty" << std::endl;
+			std::cout << std::endl;
 			continue;
 		}
 		for (int i = 0; newContact.phone_number[i]; i++)
 		{
 			if (!isdigit(newContact.phone_number[i]))
 			{
-				std::cout << "Error: phone number must contain only digits." << std::endl;
-				break;
+				newContact.phone_number = "    -     ";
+				continue;
 			}
 		}
+		std::cout << "Enter darkest_secret: ";
+		if (!std::getline(std::cin, newContact.darkest_secret))
+			return;
+		if (newContact.darkest_secret.empty())
+		{
+			std::cout << std::endl;
+			continue;
+		}
+		break;
 	}
-	
-	std::cout << "Enter darkest_secret: ";
-	std::getline(std::cin, newContact.darkest_secret);
 	if (contactCount < 8)
 		contactCount++;
 }
