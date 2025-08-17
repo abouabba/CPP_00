@@ -16,6 +16,14 @@ void Pbook::addcontact() {
 	std::getline(std::cin, newContact.nick_name);
 	std::cout << "Enter phone number: ";
 	std::getline(std::cin, newContact.phone_number);
+	for (int i = 0; newContact.phone_number[i]; i++)
+	{
+		if (!isdigit(newContact.phone_number[i]))
+		{
+			std::cout << "Error: phone number must contain only digits." << std::endl;
+			return;
+		}
+	}
 	std::cout << "Enter darkest_secret: ";
 	std::getline(std::cin, newContact.darkest_secret);
 	if (contactCount < 8)
