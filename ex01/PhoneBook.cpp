@@ -18,9 +18,7 @@ void Pbook::searchcontact() {
     std::cout << formatField("INDEX") << "|"
              << formatField("FIRST NAME") << "|"
              << formatField("LAST NAME") << "|"
-             << formatField("NICK NAME") << "|"
-             << formatField("PHONE NUMBER") << "|"
-             << formatField("DARKEST SECRET") << "|" << std::endl;
+             << formatField("NICK NAME") << std::endl;
 
 	for (int i = 0; contactCount > i; i++) {
 		Contact& contact = contacts[i];
