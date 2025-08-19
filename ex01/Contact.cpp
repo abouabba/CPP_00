@@ -47,6 +47,5 @@ void Pbook::addcontact() {
 		}
 		break;
 	}
-	if (contactCount < 8)
 		contactCount++;
 }
