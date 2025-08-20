@@ -5,6 +5,7 @@
 # include <iostream>
 # include <string>
 # include <iomanip>
+# include <cctype>
 
 
 class Pbook {
@@ -16,6 +17,8 @@ class Pbook {
 		Pbook();
 		void addcontact();
 		void searchcontact();
+		bool isAlldigit(std::string& str);
+		bool isAllspace(std::string& str);
 };
 
 # endif
