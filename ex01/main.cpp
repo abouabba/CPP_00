@@ -5,7 +5,7 @@ int main() {
 	std::string	name;
 	Pbook		PhoneBook;
 
-	std::cout << "Welcome To My Awesome PhoneBook" << std::endl;
+	std::cout << "🤖 Welcome To My Awesome PhoneBook 🤖" << std::endl;
 	while (std::getline(std::cin, name)) {
 		if (name =="ADD")
 			PhoneBook.addcontact();

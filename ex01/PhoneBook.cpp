@@ -13,10 +13,10 @@ void Pbook::searchcontact() {
         return ;
     }
 
-    std::cout << formatField("INDEX") << "|"
-             << formatField("FIRST NAME") << "|"
-             << formatField("LAST NAME") << "|"
-             << formatField("NICK NAME") << std::endl;
+    std::cout   << formatField("INDEX") << "|"
+                << formatField("FIRST NAME") << "|"
+                << formatField("LAST NAME") << "|"
+                << formatField("NICK NAME") << "|" << std::endl;
 
     int maxContacts;
     if (contactCount < 8)
@@ -26,9 +26,9 @@ void Pbook::searchcontact() {
 	for (int i = 0; maxContacts > i; i++) {
 		Contact& contact = contacts[i];
     	std::cout	<< std::setw(10) << i << "|"
-					<< std::setw(10) << formatField(contact.first_name) << "|"
-    				<< std::setw(10) << formatField(contact.last_name) << "|"
-    				<< std::setw(10) << formatField(contact.nick_name) << std::endl;
+					<< formatField(contact.first_name) << "|"
+    				<< formatField(contact.last_name) << "|"
+    				<< formatField(contact.nick_name) << "|" << std::endl;
 					}
     std::string inx;
     std::cout << "Enter index :";
@@ -56,7 +56,7 @@ void Pbook::searchcontact() {
 
     int index = atoi(inx.c_str());
     if (index >= 0 && index < maxContacts) {
-        Contact& c = contacts[index];
+        Contact c = contacts[index];
         std::cout << "First name: ["     << c.first_name     << "]" << std::endl;
         std::cout << "Last name: ["      << c.last_name      << "]" << std::endl;
         std::cout << "Nick name: ["      << c.nick_name      << "]" << std::endl;
