@@ -5,12 +5,32 @@ Pbook::Pbook() {
     contactCount = 0;
 }
 
+void Contact::SetFirstName(std::string& str) {
+	first_name = str;
+}
+
+void Contact::SetLastName(std::string& str) {
+	last_name = str;
+}
+
+void Contact::SetNickName(std::string& str) {
+	nick_name = str;
+}
+
+void Contact::SetPhoneNumber(std::string& str) {
+	phone_number = str;
+}
+
+void Contact::SetDarkestSecret(std::string& str) {
+	darkest_secret = str;
+}
+
 bool Pbook::isAlldigit(std::string& str) {
 	for(int i = 0; i < str.length(); i++) {
 		if (std::isdigit(str[i]))
-			return true;
+			return false;
 	}
-	return false;
+	return true;
 }
 
 bool Pbook::isAllspace(std::string& str) {
@@ -32,33 +52,39 @@ bool Pbook::isAllprint(std::string& str) {
 void Pbook::addcontact() {
 
 	Contact& newContact = contacts[contactCount % 8];
+	std::string input;
 	while(1) {
 
 		std::cout << "Enter first name: ";
-		if (!std::getline(std::cin, newContact.first_name))
+		if (!std::getline(std::cin, input))
 			return;
-		if(newContact.first_name.empty() || !isAllprint(newContact.first_name))
+		if(input.empty() || !isAllprint(input))
 			continue;
+		newContact.SetFirstName(input);
 		std::cout << "Enter last name: ";
-		if (!std::getline(std::cin, newContact.last_name))
+		if (!std::getline(std::cin, input))
 			return;
-		if (newContact.last_name.empty() || !isAllprint(newContact.last_name))
+		if (input.empty() || !isAllprint(input))
 			continue;
+		newContact.SetLastName(input);
 		std::cout << "Enter nick name: ";
-		if (!std::getline(std::cin, newContact.nick_name))
+		if (!std::getline(std::cin, input))
 			return;
-		if (newContact.nick_name.empty() || !isAllprint(newContact.nick_name))
+		if (input.empty() || !isAllprint(input))
 			continue;
+		newContact.SetNickName(input);
 		std::cout << "Enter phone number: ";
-		if(!std::getline(std::cin, newContact.phone_number))
+		if(!std::getline(std::cin, input))
 			return;
-		if(newContact.phone_number.empty() || isAllspace(newContact.phone_number) || !isAlldigit(newContact.phone_number) || !isAllprint(newContact.phone_number))
+		if(input.empty() || isAllspace(input) || isAlldigit(input) || !isAllprint(input))
 			continue;
+		newContact.SetPhoneNumber(input);
 		std::cout << "Enter darkest_secret: ";
-		if (!std::getline(std::cin, newContact.darkest_secret))
+		if (!std::getline(std::cin, input))
 			return;
-		if (newContact.darkest_secret.empty() || !isAllprint(newContact.darkest_secret))
+		if (input.empty() || !isAllprint(input))
 			continue;
+		newContact.SetDarkestSecret(input);
 		break;
 	}
 		contactCount++;
