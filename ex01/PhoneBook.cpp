@@ -31,8 +31,10 @@ void Pbook::searchcontact() {
     				<< std::setw(10) << formatField(contact.nick_name) << std::endl;
 					}
     std::string inx;
-    std::cout << "Enter index: ";
+    std::cout << "Enter index :";
     std::getline(std::cin, inx);
+    std::cout << std::endl;
+
     
     if (inx.empty()) {
         std::cout << "Invalid index!" << std::endl;
@@ -55,12 +57,11 @@ void Pbook::searchcontact() {
     int index = atoi(inx.c_str());
     if (index >= 0 && index < maxContacts) {
         Contact& c = contacts[index];
-        std::cout << "First name: "     << c.first_name     << std::endl;
-        std::cout << "Last name: "      << c.last_name      << std::endl;
-        std::cout << "Nick name: "      << c.nick_name      << std::endl;
-        std::cout << "Phone number: "   << c.phone_number   << std::endl;
-        std::cout << "Darkest secret: " << c.darkest_secret << std::endl;
-
+        std::cout << "First name: ["     << c.first_name     << "]" << std::endl;
+        std::cout << "Last name: ["      << c.last_name      << "]" << std::endl;
+        std::cout << "Nick name: ["      << c.nick_name      << "]" << std::endl;
+        std::cout << "Phone number: ["   << c.phone_number   << "]" << std::endl;
+        std::cout << "Darkest secret: [" << c.darkest_secret << "]" << std::endl;
     }
     else
         std::cout << "Invalid index!" << std::endl;

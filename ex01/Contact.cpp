@@ -43,7 +43,7 @@ void Pbook::addcontact() {
 		if (!std::getline(std::cin, newContact.last_name))
 			return;
 		if (newContact.last_name.empty() || !isAllprint(newContact.last_name))
-				continue;
+			continue;
 		std::cout << "Enter nick name: ";
 		if (!std::getline(std::cin, newContact.nick_name))
 			return;
