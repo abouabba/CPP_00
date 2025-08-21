@@ -19,6 +19,7 @@ class Pbook {
 		void searchcontact();
 		bool isAlldigit(std::string& str);
 		bool isAllspace(std::string& str);
+		bool isAllprint(std::string& str);
 };
 
 # endif

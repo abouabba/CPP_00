@@ -60,6 +60,7 @@ void Pbook::searchcontact() {
         std::cout << "Nick name: "      << c.nick_name      << std::endl;
         std::cout << "Phone number: "   << c.phone_number   << std::endl;
         std::cout << "Darkest secret: " << c.darkest_secret << std::endl;
+
     }
     else
         std::cout << "Invalid index!" << std::endl;

@@ -7,7 +7,6 @@ int main() {
 
 	std::cout << "Welcome To My Awesome PhoneBook" << std::endl;
 	while (std::getline(std::cin, name)) {
-
 		if (name =="ADD") {
 			PhoneBook.addcontact();
 		}
