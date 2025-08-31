@@ -1,6 +1,6 @@
 NAME = megaphone
 CC = c++
-CFLAGS = -Westra -Wall -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = megaphone.cpp
 OBG = ${SRC:.cpp=.o}
