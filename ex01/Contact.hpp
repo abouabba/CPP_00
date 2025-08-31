@@ -3,7 +3,8 @@
 
 # include <string>
 
-class Contact {
+class Contact 
+{
 
 	private:
 		std::string	first_name;
@@ -11,6 +12,7 @@ class Contact {
 		std::string	nick_name;
 		std::string	phone_number;
 		std::string	darkest_secret;
+		
 	public:
 		void SetFirstName(std::string& str);
 		void SetLastName(std::string& str);

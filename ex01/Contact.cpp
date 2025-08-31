@@ -1,7 +1,8 @@
 # include "Contact.hpp"
 # include "PhoneBook.hpp"
 
-Pbook::Pbook() {
+Pbook::Pbook()
+{
     contactCount = 0;
 }
 
@@ -26,7 +27,7 @@ void Contact::SetDarkestSecret(std::string& str) {
 }
 
 bool Pbook::isAlldigit(std::string& str) {
-	for(int i = 0; i < str.length(); i++) {
+	for(size_t i = 0; i < str.length(); i++) {
 		if (std::isdigit(str[i]))
 			return false;
 	}
@@ -34,7 +35,7 @@ bool Pbook::isAlldigit(std::string& str) {
 }
 
 bool Pbook::isAllspace(std::string& str) {
-	for(int i = 0; i < str.length(); i++) {
+	for(size_t i = 0; i < str.length(); i++) {
 		if (std::isspace(str[i]))
 			return true;
 	}
@@ -42,7 +43,7 @@ bool Pbook::isAllspace(std::string& str) {
 }
 
 bool Pbook::isAllprint(std::string& str) {
-	for(int i = 0; i < str.length(); i++) {
+	for(size_t i = 0; i < str.length(); i++) {
 		if (!std::isprint(str[i]))
 			return false;
 	}
@@ -54,7 +55,6 @@ void Pbook::addcontact() {
 	Contact& newContact = contacts[contactCount % 8];
 	std::string input;
 	while(1) {
-
 		std::cout << "Enter first name: ";
 		if (!std::getline(std::cin, input))
 			return;
