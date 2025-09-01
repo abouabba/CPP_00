@@ -10,6 +10,9 @@ all: ${NAME}
 ${NAME}: ${OBG}
 	${CC} ${CFLAGS} -o ${NAME} ${OBG}
 
+%.o: %.cpp
+	${CC} ${CFLAGS} -c $< -o $@
+
 clean:
 	rm -rf ${OBG}
 
