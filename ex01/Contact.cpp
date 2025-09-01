@@ -1,10 +1,7 @@
 # include "Contact.hpp"
 # include "PhoneBook.hpp"
 
-Pbook::Pbook()
-{
-    contactCount = 0;
-}
+
 
 void Contact::SetFirstName(std::string& str) {
 	first_name = str;
@@ -28,13 +25,13 @@ void Contact::SetDarkestSecret(std::string& str) {
 
 bool Pbook::isAlldigit(std::string& str) {
 	for(size_t i = 0; i < str.length(); i++) {
-		if (std::isdigit(str[i]))
-			return false;
+		if (!isdigit(str[i]))
+			return true;
 	}
-	return true;
+	return false;
 }
 
-bool Pbook::isAllspace(std::string& str) {
+bool Pbook::thereIsSpace(std::string& str) {
 	for(size_t i = 0; i < str.length(); i++) {
 		if (std::isspace(str[i]))
 			return true;
@@ -76,7 +73,7 @@ void Pbook::addcontact() {
 		std::cout << "Enter phone number: ";
 		if(!std::getline(std::cin, input))
 			return;
-		if(input.empty() || isAllspace(input) || isAlldigit(input) || !isAllprint(input))
+		if(input.empty() || thereIsSpace(input) || isAlldigit(input) || !isAllprint(input))
 			continue;
 		newContact.SetPhoneNumber(input);
 		std::cout << "Enter darkest_secret: ";

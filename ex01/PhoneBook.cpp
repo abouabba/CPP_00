@@ -1,6 +1,12 @@
 # include "PhoneBook.hpp"
 # include "Contact.hpp"
 
+
+Pbook::Pbook()
+{
+    contactCount = 0;
+}
+
 std::string formatField(std::string str) {
     if (str.length() > 10)
         return str.substr(0, 9) + ".";
@@ -18,14 +24,14 @@ void Pbook::searchcontact() {
                 << formatField("LAST NAME") << "|"
                 << formatField("NICK NAME") << "|" << std::endl;
 
-    int maxContacts;
     if (contactCount < 8)
         maxContacts = contactCount;
     else
         maxContacts = 8;
+
 	for (int i = 0; maxContacts > i; i++) {
 		Contact& contact = contacts[i];
-    	std::cout	<< std::setw(10) << i << "|"
+    	std::cout	<< std::setw(10) << i  << "|"
 					<< formatField(contact.GetFirstName()) << "|"
     				<< formatField(contact.GetLastName()) << "|"
     				<< formatField(contact.GetNickName()) << "|" << std::endl;
@@ -35,7 +41,6 @@ void Pbook::searchcontact() {
     std::getline(std::cin, inx);
     std::cout << std::endl;
 
-    
     if (inx.empty()) {
         std::cout << "Invalid index!" << std::endl;
         return;

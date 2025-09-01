@@ -13,12 +13,13 @@ class Pbook {
 	private:
 		Contact contacts[8];
 		int contactCount;
+		int maxContacts;
 	public:
 		Pbook();
 		void addcontact();
 		void searchcontact();
 		bool isAlldigit(std::string& str);
-		bool isAllspace(std::string& str);
+		bool thereIsSpace(std::string& str);
 		bool isAllprint(std::string& str);
 };
 

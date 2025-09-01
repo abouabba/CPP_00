@@ -1,13 +1,14 @@
 # include <iostream>
+# include <fstream>
 
 int main (int ac, char **av) {
 	if (ac < 2) {
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return (1);
 	}
+
 	else
 	{
-		int b = 4;
 		for (int i = 1; av[i]; i++) {
 			for (int j = 0; av[i][j]; j++) {
 				std::cout << (char)(toupper(av[i][j]));
@@ -16,3 +17,5 @@ int main (int ac, char **av) {
 		std::cout << std::endl;
 	}
 }
+
+
