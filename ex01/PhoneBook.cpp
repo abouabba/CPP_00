@@ -2,6 +2,7 @@
 # include "Contact.hpp"
 
 
+
 Pbook::Pbook()
 {
     contactCount = 0;
@@ -24,11 +25,11 @@ void Pbook::searchcontact() {
                 << formatField("LAST NAME") << "|"
                 << formatField("NICK NAME") << "|" << std::endl;
 
-    if (contactCount < 8)
+    if (contactCount < 8){
         maxContacts = contactCount;
-    else
+    }else {
         maxContacts = 8;
-
+    }
 	for (int i = 0; maxContacts > i; i++) {
 		Contact& contact = contacts[i];
     	std::cout	<< std::setw(10) << i  << "|"

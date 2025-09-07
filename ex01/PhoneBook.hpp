@@ -6,7 +6,7 @@
 # include <string>
 # include <iomanip>
 # include <cctype>
-
+#include <cstdlib>
 
 class Pbook {
 
